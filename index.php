@@ -15,9 +15,7 @@
     require_once("requires.php");
     
     $utilit = new Utility();
-    $response = array();
-
-    
+   
     Utility::isActivated();    
     $utilit->accessControlAllowOrigin();
 
@@ -29,4 +27,13 @@
     $json_request = json_decode($contents, true);
     $json_object  = (object)$json_request;
     
-    Utility::dd($get_headers);
+    $customer = new ControllerCustomer();
+    $customer->setName('Icaro');
+    $customer->setSobrenome('França');
+    $customer->setCpf('1646464646');
+    $customer->setDataNascimento('08/03/1997');
+    $response = $customer->addCustomer();
+    
+    //Utility::dd();
+    
+    echo json_encode($response, JSON_UNESCAPED_UNICODE);
