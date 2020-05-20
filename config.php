@@ -4,7 +4,7 @@
 define("API_ACTIVATED", true);
 define("DEBUG", true);
 define("RESTRICT_ORIGIN", false);
-define("PATH", '/var/www/html/');
+define("PATH", '/var/www/html/api/');
 
 //MYSQL Configurations
 define("MYSQL_HOSTNAME", 'localhost');
